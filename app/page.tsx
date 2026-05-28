@@ -22,31 +22,32 @@ const photos = {
 const programs = [
   {
     title: "Kids Jiu-Jitsu",
-    meta: "Ages 4+",
-    text: "Confidence, coordination, discipline, and problem solving through movement-rich training."
+    meta: "Ages 3+ / Kids & Teens",
+    text: "A safe, structured program that helps kids build confidence, focus, respect, coordination, and social skills through Jiu-Jitsu."
   },
   {
     title: "Adult Gi",
     meta: "Beginner to advanced",
-    text: "A technical curriculum for learning positions, pressure, escapes, and control."
+    text: "Beginner-friendly Jiu-Jitsu for adults who want to learn fundamentals, build skill, relieve stress, and enjoy training in a supportive environment."
   },
   {
     title: "No-Gi",
     meta: "All levels",
-    text: "Fast-paced grappling for athletes who want sharp movement and practical transitions."
+    text: "No-Gi Jiu-Jitsu for students who want to improve movement, control, transitions, and confidence without the traditional gi."
   },
   {
     title: "Private Training",
     meta: "By appointment",
-    text: "Focused sessions for new students, competitors, families, and specific skill goals."
+    text: "One-on-one coaching for beginners, kids, competitors, families, and students who want extra help with specific goals."
   }
 ];
 
 const notes = [
   "Del Mar, Solana Beach, Carmel Valley, Encinitas",
   "4,500+ sq ft facility",
-  "Jiu-Jitsu, fitness, recovery, community",
-  "Black belt instruction"
+  "Kids Jiu-Jitsu in Del Mar",
+  "Adult Jiu-Jitsu near Solana Beach",
+  "Family-friendly Jiu-Jitsu academy in San Diego"
 ];
 
 export default function Home() {
@@ -68,7 +69,7 @@ function Header() {
       <a className="brand" href="#top" aria-label="Del Mar Jiu-Jitsu Club home">
         <img src="/icon.svg" alt="" />
         <span>
-          <strong>dmjjc.</strong>
+          <strong>Del Mar Jiu-Jitsu Club</strong>
           <small>Del Mar, CA</small>
         </span>
       </a>
@@ -78,7 +79,7 @@ function Header() {
         <a href="#visit">Visit</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a className="button button-dark" href="#visit">Free Class</a>
+      <a className="button button-dark" href="#visit">Free Trial</a>
     </header>
   );
 }
@@ -87,12 +88,12 @@ function Hero() {
   return (
     <section className="hero grid-shell" id="top">
       <div className="hero-title cell span-2">
-        <p className="wordmark">dmjjc.</p>
+        <p className="wordmark">Del Mar Jiu-Jitsu Club</p>
         <span className="arrow" aria-hidden="true">↘</span>
       </div>
       <div className="cell hide-mobile">
         <Image src={photos.mats} alt="" width={640} height={426} className="thumb grayscale" priority />
-        <p className="caption">Mat Study 001</p>
+        <p className="caption">Inside The Club</p>
       </div>
       <div className="cell nav-list hide-mobile">
         <a href="#programs">About</a>
@@ -101,7 +102,7 @@ function Hero() {
         <a href="#visit">Contact</a>
       </div>
       <div className="cell span-2 hero-note">
-        <p>A serious academy with a coastal edge, built around discipline, family, and the quiet work that happens on the mat.</p>
+        <p>A premium, family-centered Jiu-Jitsu academy in Del Mar where kids, teens, and adults build confidence, discipline, and real skill in a safe, welcoming environment.</p>
         <strong>2026</strong>
       </div>
       <div className="hero-image cell span-4">
@@ -109,7 +110,11 @@ function Hero() {
       </div>
       <div className="hero-statement cell span-2">
         <p className="eyebrow">Del Mar Jiu-Jitsu Club</p>
-        <h1>The Mat Where Discipline Meets Community.</h1>
+        <h1>More Than Jiu-Jitsu in Del Mar</h1>
+        <div className="hero-actions">
+          <a className="button button-cyan" href="#visit">Book a Free Trial Class</a>
+          <a className="button button-outline" href="#programs">View Programs</a>
+        </div>
         <div className="stat-row">
           <div>
             <strong>75+</strong>
@@ -126,10 +131,10 @@ function StudioSection() {
   return (
     <section className="split-section dark">
       <div className="section-copy">
-        <p className="eyebrow">The work behind the work</p>
-        <h2>The best progress is usually quiet.</h2>
+        <p className="eyebrow">What Students Build Here</p>
+        <h2>Confidence is built one class at a time.</h2>
         <p>
-          Showing up, drilling patiently, learning to breathe under pressure, and leaving with a little more composure than you brought in.
+          Students learn to listen, move, problem-solve, handle pressure, and keep showing up. Over time, those small moments turn into confidence that parents can see and students can feel.
         </p>
       </div>
       <div className="stacked-media">
@@ -145,11 +150,11 @@ function ProgramSection() {
     <section className="programs grid-shell" id="programs">
       <div className="cell span-2">
         <p className="eyebrow">Programs</p>
-        <h2>Not everything we do is seen.</h2>
+        <h2>Programs for every stage of training.</h2>
       </div>
       <div className="cell span-4 intro-copy">
         <p>
-          DMJJC blends technical Jiu-Jitsu, athletic development, and a welcoming community for kids, adults, competitors, and first-day beginners.
+          Del Mar Jiu-Jitsu Club offers kids classes, adult Jiu-Jitsu, No-Gi training, private lessons, and beginner-friendly instruction for students at every level.
         </p>
       </div>
       {programs.map((program, index) => (
@@ -168,8 +173,8 @@ function GallerySection() {
   return (
     <section className="gallery dark">
       <div className="gallery-header">
-        <p className="eyebrow">Fragments of training</p>
-        <h2>Jiu-Jitsu, fitness, recovery, and family.</h2>
+        <p className="eyebrow">Life at The Club</p>
+        <h2>Real training, real coaching, and a community families can trust.</h2>
       </div>
       <div className="gallery-grid">
         <Image src={photos.kids} alt="Kids from Del Mar Jiu-Jitsu Club smiling together." width={2000} height={1333} />
@@ -186,22 +191,23 @@ function VisitSection() {
     <section className="visit" id="visit">
       <div className="quote">
         <span aria-hidden="true">“</span>
-        <h2>Train like a champion. Belong like family.</h2>
+        <h2>Learn Jiu-Jitsu. Build confidence. Belong at The Club.</h2>
       </div>
       <div className="visit-grid" id="schedule">
         <div>
-          <p className="eyebrow">Visit the academy</p>
+          <p className="eyebrow">Start with a free trial class</p>
           <h3>2120 Jimmy Durante Blvd #121<br />Del Mar, CA 92014</h3>
         </div>
         <div>
           <p className="eyebrow">Start here</p>
-          <p>Book a free class, tour the facility, or ask which program is the best fit.</p>
-          <a className="button button-cyan" href="https://delmarjiujitsuclub.com/contact">Book a Free Class</a>
+          <p>Come see if Del Mar Jiu-Jitsu Club is the right fit for your child, your teen, or yourself. Book a free class, tour the facility, or send us a message with questions.</p>
+          <a className="button button-cyan" href="https://delmarjiujitsuclub.com/contact">Book a Free Trial Class</a>
         </div>
         <div id="contact">
           <p className="eyebrow">Contact</p>
           <a href="mailto:info@delmarjiujitsuclub.com">info@delmarjiujitsuclub.com</a>
           <a href="https://www.instagram.com/delmarjiujitsuclub/">@delmarjiujitsuclub</a>
+          <p className="local-note">Serving families from Del Mar, Carmel Valley, Solana Beach, Encinitas, and nearby San Diego communities.</p>
         </div>
       </div>
       <div className="ticker" aria-label="DMJJC highlights">
