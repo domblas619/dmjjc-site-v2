@@ -10,3 +10,8 @@ npm run dev
 ```
 
 Open `http://localhost:3000`.
+
+## Services
+
+- Vercel project: `dmjjc-projects/dmjjc-site-v2`
+- Sanity project: `DMJJC Site V2` (`ich1vz8m`, dataset `production`)
