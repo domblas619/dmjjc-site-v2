@@ -860,6 +860,30 @@ h3 {
     min-height: 360px;
   }
 
+  .hero-image img,
+  .subpage-hero img,
+  .stacked-media img,
+  .gallery-grid img,
+  .gallery-grid img:nth-child(1),
+  .gallery-grid img:nth-child(2),
+  .gallery-grid img:nth-child(3),
+  .gallery-grid img:nth-child(4),
+  .listing-card img,
+  .coach-card img,
+  .blog-card img,
+  .image-pair img {
+    aspect-ratio: 5 / 4;
+    min-height: 0;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .coach-card img,
+  .blog-card img,
+  .stacked-media img:last-child {
+    aspect-ratio: 1 / 1;
+  }
+
   .hero-statement {
     gap: 80px;
   }
