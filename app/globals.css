@@ -63,9 +63,11 @@ img {
 }
 
 .brand img {
-  width: 40px;
+  width: 46px;
   height: 40px;
-  border-radius: 8px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: var(--black);
 }
 
 .brand strong,

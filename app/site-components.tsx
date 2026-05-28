@@ -7,7 +7,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <Link className="brand" href="/" aria-label="Del Mar Jiu-Jitsu Club home">
-        <img src="/icon.svg" alt="" />
+        <img src="/dmjjc-logo-icon.png" alt="" />
         <span>
           <strong>Del Mar Jiu-Jitsu Club</strong>
           <small>Del Mar, CA</small>
@@ -33,7 +33,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div>
         <Link className="brand footer-brand" href="/">
-          <img src="/icon.svg" alt="" />
+          <img src="/dmjjc-logo-icon.png" alt="" />
           <span>
             <strong>Del Mar Jiu-Jitsu Club</strong>
             <small>More Than Jiu-Jitsu in Del Mar</small>
