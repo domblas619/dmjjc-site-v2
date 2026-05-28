@@ -1,86 +1,18 @@
 import Image from "next/image";
-
-const photos = {
-  arrival:
-    "https://cdn.sanity.io/images/d26yk9dk/production/65a00dcbe8861e6a77b224b223fea36e74f24b61-2000x1333.jpg",
-  mats:
-    "https://cdn.sanity.io/images/d26yk9dk/production/72206a40b6a095babe1a6f85ae4aa9db17540290-1920x1280.jpg",
-  kids:
-    "https://cdn.sanity.io/images/d26yk9dk/production/14e96827abc158582c46d035bcf8c6f544821ce2-2000x1333.jpg",
-  training:
-    "https://cdn.sanity.io/images/d26yk9dk/production/92e83847c7d524dcd3431167e6ecba3ef60c5dac-1386x924.jpg",
-  portrait:
-    "https://cdn.sanity.io/images/d26yk9dk/production/e851c102cf5a2e46ddefa5ef5e75ab20efd363b2-1536x1920.jpg",
-  gym:
-    "https://cdn.sanity.io/images/d26yk9dk/production/aad08b0aedefe8c36eda5d129fdf6bbbe30803d5-2000x1124.jpg",
-  team:
-    "https://cdn.sanity.io/images/d26yk9dk/production/23ddfd868ef32f1b08405f8dc3fc26649e8d734c-1920x1280.jpg",
-  coast:
-    "https://cdn.sanity.io/images/d26yk9dk/production/b9f023766e18aaf7f73d1c243b087a19ebadf42a-2560x1170.jpg"
-};
-
-const programs = [
-  {
-    title: "Kids Jiu-Jitsu",
-    meta: "Ages 3+ / Kids & Teens",
-    text: "A safe, structured program that helps kids build confidence, focus, respect, coordination, and social skills through Jiu-Jitsu."
-  },
-  {
-    title: "Adult Gi",
-    meta: "Beginner to advanced",
-    text: "Beginner-friendly Jiu-Jitsu for adults who want to learn fundamentals, build skill, relieve stress, and enjoy training in a supportive environment."
-  },
-  {
-    title: "No-Gi",
-    meta: "All levels",
-    text: "No-Gi Jiu-Jitsu for students who want to improve movement, control, transitions, and confidence without the traditional gi."
-  },
-  {
-    title: "Private Training",
-    meta: "By appointment",
-    text: "One-on-one coaching for beginners, kids, competitors, families, and students who want extra help with specific goals."
-  }
-];
-
-const notes = [
-  "Del Mar, Solana Beach, Carmel Valley, Encinitas",
-  "4,500+ sq ft facility",
-  "Kids Jiu-Jitsu in Del Mar",
-  "Adult Jiu-Jitsu near Solana Beach",
-  "Family-friendly Jiu-Jitsu academy in San Diego"
-];
+import { SiteFooter, SiteHeader } from "./site-components";
+import { homePrograms, notes, photos } from "./site-data";
 
 export default function Home() {
   return (
     <main>
-      <Header />
+      <SiteHeader />
       <Hero />
       <StudioSection />
       <ProgramSection />
       <GallerySection />
       <VisitSection />
+      <SiteFooter />
     </main>
-  );
-}
-
-function Header() {
-  return (
-    <header className="site-header">
-      <a className="brand" href="#top" aria-label="Del Mar Jiu-Jitsu Club home">
-        <img src="/icon.svg" alt="" />
-        <span>
-          <strong>Del Mar Jiu-Jitsu Club</strong>
-          <small>Del Mar, CA</small>
-        </span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="#programs">Programs</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#visit">Visit</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a className="button button-dark" href="#visit">Free Trial</a>
-    </header>
   );
 }
 
@@ -96,10 +28,10 @@ function Hero() {
         <p className="caption">Inside The Club</p>
       </div>
       <div className="cell nav-list hide-mobile">
-        <a href="#programs">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#visit">Contact</a>
+        <a href="/classes">Classes</a>
+        <a href="/schedule">Schedule</a>
+        <a href="/instructors">Instructors</a>
+        <a href="/contact">Contact</a>
       </div>
       <div className="cell span-2 hero-note">
         <p>A premium, family-centered Jiu-Jitsu academy in Del Mar where kids, teens, and adults build confidence, discipline, and real skill in a safe, welcoming environment.</p>
@@ -112,8 +44,8 @@ function Hero() {
         <p className="eyebrow">Del Mar Jiu-Jitsu Club</p>
         <h1>More Than Jiu-Jitsu in Del Mar</h1>
         <div className="hero-actions">
-          <a className="button button-cyan" href="#visit">Book a Free Trial Class</a>
-          <a className="button button-outline" href="#programs">View Programs</a>
+          <a className="button button-cyan" href="/free-class">Book a Free Trial Class</a>
+          <a className="button button-outline" href="/classes">View Programs</a>
         </div>
         <div className="stat-row">
           <div>
@@ -157,7 +89,7 @@ function ProgramSection() {
           Del Mar Jiu-Jitsu Club offers kids classes, adult Jiu-Jitsu, No-Gi training, private lessons, and beginner-friendly instruction for students at every level.
         </p>
       </div>
-      {programs.map((program, index) => (
+      {homePrograms.map((program, index) => (
         <article className="program-card cell span-3" key={program.title}>
           <span>{String(index + 1).padStart(2, "0")}</span>
           <h3>{program.title}</h3>
@@ -201,7 +133,7 @@ function VisitSection() {
         <div>
           <p className="eyebrow">Start here</p>
           <p>Come see if Del Mar Jiu-Jitsu Club is the right fit for your child, your teen, or yourself. Book a free class, tour the facility, or send us a message with questions.</p>
-          <a className="button button-cyan" href="https://delmarjiujitsuclub.com/contact">Book a Free Trial Class</a>
+          <a className="button button-cyan" href="/free-class">Book a Free Trial Class</a>
         </div>
         <div id="contact">
           <p className="eyebrow">Contact</p>
