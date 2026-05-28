@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Del Mar Jiu-Jitsu Club",
   description:
-    "Jiu-Jitsu, fitness, and community in Del Mar, California. Kids, adults, no-gi, private training, and performance center programs.",
+    "A premium, family-centered Jiu-Jitsu academy in Del Mar where kids, teens, and adults build confidence, discipline, skill, and community.",
   metadataBase: new URL("https://delmarjiujitsuclub.com"),
   icons: {
     icon: "/icon.svg",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Del Mar Jiu-Jitsu Club",
-    description: "Train like a champion at Del Mar Jiu-Jitsu Club.",
+    description: "More Than Jiu-Jitsu in Del Mar.",
     images: [
       {
         url: "https://cdn.sanity.io/images/d26yk9dk/production/65a00dcbe8861e6a77b224b223fea36e74f24b61-2000x1333.jpg",
