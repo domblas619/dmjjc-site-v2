@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MobileMenu } from "./mobile-menu";
 import { footerLinks, navLinks, photos } from "./site-data";
 
 export function SiteHeader() {
@@ -12,7 +13,7 @@ export function SiteHeader() {
           <small>Del Mar, CA</small>
         </span>
       </Link>
-      <nav aria-label="Primary navigation">
+      <nav className="desktop-nav" aria-label="Primary navigation">
         {navLinks.map((link) => (
           <Link href={link.href} key={link.href}>
             {link.label}
@@ -22,6 +23,7 @@ export function SiteHeader() {
       <Link className="button button-dark" href="/free-class">
         Free Trial
       </Link>
+      <MobileMenu />
     </header>
   );
 }
@@ -122,4 +124,3 @@ export function ImagePair({ images }: { images: string[] }) {
     </div>
   );
 }
-
