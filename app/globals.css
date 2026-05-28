@@ -75,7 +75,7 @@ img {
 }
 
 .brand strong {
-  font-size: 16px;
+  font-size: clamp(13px, 1.6vw, 16px);
   font-weight: 950;
   letter-spacing: 0;
 }
@@ -122,6 +122,11 @@ img {
   color: var(--black);
 }
 
+.button-outline {
+  border: 1px solid var(--line);
+  color: var(--black);
+}
+
 .grid-shell {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -161,9 +166,10 @@ img {
 
 .wordmark {
   margin: 0;
-  font-size: clamp(72px, 11vw, 150px);
+  max-width: 900px;
+  font-size: clamp(44px, 8vw, 112px);
   font-weight: 950;
-  line-height: 0.78;
+  line-height: 0.86;
   letter-spacing: 0;
 }
 
@@ -251,6 +257,17 @@ img {
   flex-direction: column;
   justify-content: space-between;
   min-height: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-actions .button {
+  justify-self: start;
 }
 
 h1,
@@ -483,6 +500,12 @@ h3 {
   font-weight: 850;
 }
 
+.visit-grid .local-note {
+  margin-top: 28px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 .ticker {
   display: flex;
   flex-wrap: wrap;
@@ -589,7 +612,7 @@ h3 {
   }
 
   .wordmark {
-    font-size: 72px;
+    font-size: 46px;
   }
 
   .hero-note {
