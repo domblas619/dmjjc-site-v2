@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { SiteFooter, SiteHeader } from "./site-components";
+import { SiteInteractions } from "./site-interactions";
 import { homePrograms, notes, photos } from "./site-data";
 
 export default function Home() {
   return (
     <main>
+      <SiteInteractions />
       <SiteHeader />
       <Hero />
       <StudioSection />

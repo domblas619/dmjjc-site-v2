@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { CTASection, ImagePair, PageHero, PageShell } from "../../site-components";
+import { ClassAnchorNav, CTASection, ImagePair, PageHero, PageShell } from "../../site-components";
 import { classPages, photos } from "../../site-data";
 
 export function generateStaticParams() {
@@ -14,12 +14,19 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ sl
     notFound();
   }
 
+  const sections = page.panels.map((panel) => ({
+    id: panel.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
+    title: panel.title,
+    meta: panel.meta
+  }));
+
   return (
     <PageShell>
       <PageHero eyebrow={page.eyebrow} title={page.title} body={page.body} image={page.image} />
+      <ClassAnchorNav sections={sections} />
       <section className="detail-panels">
-        {page.panels.map((panel) => (
-          <article className="detail-panel" key={panel.title}>
+        {page.panels.map((panel, index) => (
+          <article className="detail-panel" id={sections[index].id} key={panel.title}>
             <p className="eyebrow">{panel.meta}</p>
             <h2>{panel.title}</h2>
             <p>{panel.body}</p>
@@ -36,4 +43,3 @@ export default async function ClassDetailPage({ params }: { params: Promise<{ sl
     </PageShell>
   );
 }
-

@@ -14,7 +14,7 @@ export default function InstructorsPage() {
       <section className="coach-grid">
         {instructors.map((coach) => (
           <article className="coach-card" key={coach.name}>
-            <Image src={coach.image} alt={coach.name} width={710} height={870} />
+            <Image className="reveal-media" src={coach.image} alt={coach.name} width={710} height={870} />
             <p className="eyebrow">{coach.rank}</p>
             <h2>{coach.name}</h2>
             <p>{coach.role}</p>
@@ -25,4 +25,3 @@ export default function InstructorsPage() {
     </PageShell>
   );
 }
-

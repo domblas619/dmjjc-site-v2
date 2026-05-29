@@ -14,7 +14,7 @@ export default function BlogPage() {
       <section className="blog-grid">
         {blogPosts.map(([category, date, title, image]) => (
           <article className="blog-card" key={title}>
-            <Image src={image} alt="" width={600} height={640} />
+            <Image className="reveal-media" src={image} alt="" width={600} height={640} />
             <p className="eyebrow">{category} / {date}</p>
             <h2>{title}</h2>
           </article>
@@ -23,4 +23,3 @@ export default function BlogPage() {
     </PageShell>
   );
 }
-

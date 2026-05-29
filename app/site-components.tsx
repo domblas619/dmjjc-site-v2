@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MobileMenu } from "./mobile-menu";
+import { SiteInteractions } from "./site-interactions";
 import { footerLinks, navLinks, photos } from "./site-data";
 
 export function SiteHeader() {
@@ -62,6 +63,7 @@ export function SiteFooter() {
 export function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <main>
+      <SiteInteractions />
       <SiteHeader />
       {children}
       <SiteFooter />
@@ -87,7 +89,7 @@ export function PageHero({
         <h1>{title}</h1>
         <p>{body}</p>
       </div>
-      <Image src={image} alt="" width={1400} height={950} priority />
+      <Image className="reveal-media" src={image} alt="" width={1400} height={950} priority />
     </section>
   );
 }
@@ -119,8 +121,21 @@ export function ImagePair({ images }: { images: string[] }) {
   return (
     <div className="image-pair">
       {images.map((image) => (
-        <Image src={image} alt="" width={1100} height={820} key={image} />
+        <Image className="reveal-media" src={image} alt="" width={1100} height={820} key={image} />
       ))}
     </div>
+  );
+}
+
+export function ClassAnchorNav({ sections }: { sections: { id: string; title: string; meta: string }[] }) {
+  return (
+    <nav className="class-anchor-nav" aria-label="Class sections">
+      {sections.map((section) => (
+        <a href={`#${section.id}`} key={section.id}>
+          <span>{section.meta}</span>
+          {section.title}
+        </a>
+      ))}
+    </nav>
   );
 }

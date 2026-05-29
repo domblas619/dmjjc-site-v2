@@ -15,7 +15,7 @@ export default function ClassesPage() {
       <section className="listing-grid">
         {classSummaries.map((item) => (
           <Link className="listing-card" href={item.href} key={item.href}>
-            <Image src={item.image} alt="" width={900} height={675} />
+            <Image className="reveal-media" src={item.image} alt="" width={900} height={675} />
             <p className="eyebrow">{item.eyebrow}</p>
             <h2>{item.title}</h2>
             <p>{item.text}</p>
@@ -31,4 +31,3 @@ export default function ClassesPage() {
     </PageShell>
   );
 }
-
