@@ -282,6 +282,26 @@ img {
   filter: grayscale(1) contrast(1.12);
 }
 
+.hero-image img,
+.stacked-media img,
+.gallery-grid img,
+.subpage-hero img,
+.listing-card img,
+.coach-card img,
+.blog-card img,
+.image-pair img {
+  transition: filter 260ms ease, transform 260ms ease;
+}
+
+.hero-image:hover img,
+.stacked-media img:hover,
+.gallery-grid img:hover,
+.subpage-hero img:hover,
+.image-pair img:hover {
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.015);
+}
+
 .caption,
 .eyebrow,
 .meta {
@@ -682,7 +702,6 @@ h3 {
   border-radius: 6px;
   filter: grayscale(1) contrast(1.1);
   margin-bottom: 28px;
-  transition: filter 260ms ease, transform 260ms ease;
 }
 
 .coach-card img,
